@@ -1,0 +1,71 @@
+
+@import "box.css";
+@import "header.css";
+@import "nested grid"
+
+@import url("");
+
+.container{
+  display:grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 250px 600px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+  "hd"
+  "sd"
+  "main"
+  "ft";
+  
+}
+img{
+  display:flex;
+  justify-self: center;
+width: 50%;
+height: 40%;
+  padding-bottom: 1em;
+  padding-left: 3em;
+  padding-right:3em;
+
+}
+.nestedGrid {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: 50% 50%;
+  grid-auto-rows: minmax(200px);
+}
+.nestedGrid > *{
+  border: 2px solid blue;
+}
+.box{
+    border: 1px solid red;
+    background: #33AFFF;
+    }
+
+
+  .header{
+    grid-area:hd;
+    text-align: center;
+  }
+  .footer{
+    grid-area: ft;  
+  }
+  .sidebar{
+    grid-area: sd;
+  }
+  .content{
+    grid-area: main;
+  }
+
+@media(min-width:900px) {
+.container{
+      display:grid;
+      grid-template-columns: 300px 300px 300px;
+      grid-template-rows: 250px 600px;
+      grid-template-areas: 
+      "hd hd hd hd hd hd hd hd"
+      "sd sd main main main main main main"
+      "ft ft ft ft ft ft ft ft";
+      border: 2px solid red;
+  }
+  
+}
